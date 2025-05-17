@@ -1,7 +1,10 @@
 import FilterSvg from "../../MySvg/FilterSvg";
+import ActionButton from "./ActionButton";
 import TableRow from "./TableRow";
 
 export default function Report() {
+  const deleteBtn = <ActionButton title="Delete" extraClass="hover:bg-red-600 mr-1" />;
+  const deliveredBtn = <ActionButton title="Delivered" extraClass="hover:bg-green-600" />;
   const dataList = [
     {
       Id: 1,
@@ -11,7 +14,7 @@ export default function Report() {
       orderAmount: 120,
       orderStatus: "PENDING",
       orderStatusClass: "text-red-500",
-      children: "",
+      children: deleteBtn,
     },
     {
       Id: 2,
@@ -21,7 +24,12 @@ export default function Report() {
       orderAmount: 120,
       orderStatus: "DELIVERED",
       orderStatusClass: "text-green-500",
-      children: "",
+      children:(
+      <>
+        {deleteBtn}
+        {deliveredBtn}
+      </>
+    ),
     },
   ];
   return (
