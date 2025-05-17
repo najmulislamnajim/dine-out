@@ -1,5 +1,5 @@
 import FilterSvg from "../../MySvg/FilterSvg";
-import TableRow from "./tableRow";
+import TableRow from "./TableRow";
 
 export default function Report() {
   const dataList = [
